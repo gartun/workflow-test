@@ -10,6 +10,5 @@ jobs:
           fetch-depth: 0
       - name: prettify code
         uses: creyD/prettier_action@v4.0
-        with:
-          only_changed: True
+       
        
