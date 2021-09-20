@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/gartun/workflow-test/issues"
   },
-  "homepage": "https://github.com/gartun/workflow-test#readme"
+  "homepage": "https://github.com/gartun/workflow-test#readme",
+  "dependencies": {
+    "jest": "^27.2.0"
+  }
 }
