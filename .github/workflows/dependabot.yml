@@ -1,0 +1,55 @@
+version: 2
+update: 
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule: 
+      interval: "daily"
+
+  - package-ecosystem: "yarn"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "friday"
+    allow: 
+      - dependency-name: "lodash"
+    assignees:
+      - "gkhnjamiryo"
+    # to disable all labels => 'labels: [ ]'
+    labels: 
+      - "yarn"
+      - "dependencies"
+
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule: 
+      interval: "monthly"
+    allow:
+      # allow dev dependency updates for lodash 
+      - dependency-name: "lodash"
+        dependency-type: "development"
+    ignore: 
+      # ignore all express updates between version 4 and 5
+      - dependency-name: "express"
+        versions: ["4.x", "5.x"]
+    commit-message:
+      prefix: "npm auto dev dependecy update -"
+      include: "scope"
+    open-pull-requests-limit: 10
+    reviewers:
+      - "someuser"
+      - "someotheruser"
+      - "my-org/frontend-team"
+    
+    - package-ecosystem: "pip"
+      directory: "/"
+      schedule:
+        interval: "daily"
+        time: "10:00"
+      # Raise pull requests for version updates
+      # to pip against the `develop` branch
+      target-branch: "develop"
+      # Labels on pull requests for version updates only
+      labels:
+        - "pip dependencies"
+      # disable version updates for pip packages
+      open-pull-requests-limit: 0

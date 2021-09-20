@@ -1,0 +1,21 @@
+{
+  "name": "workflow-test",
+  "version": "1.0.0",
+  "description": "...",
+  "main": "github-actions-reporter.js",
+  "scripts": {
+    "test": "jest --watch",
+    "test:ci": "jest --ci --reporters='default' --reporters='./github-actions-reporter'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gartun/workflow-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gartun/workflow-test/issues"
+  },
+  "homepage": "https://github.com/gartun/workflow-test#readme"
+}
