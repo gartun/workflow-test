@@ -1,5 +1,5 @@
 name: CI Tests
-on: [push, pull request]
+on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -20,7 +20,7 @@ jobs:
             "description": "Tests passed",
             "target_url": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           }'
-          
+
       - name: Tests failed
         if: ${{ failure() }}
         run: |
